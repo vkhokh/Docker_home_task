@@ -1,0 +1,21 @@
+# prime.py
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def nth_prime(n):
+    count = 0
+    num = 2
+    while count < n:
+        if is_prime(num):
+            count += 1
+        num += 1
+    return num - 1
+
+# Вычисляем 100-ое простое число
+result = nth_prime(100)
+print(f"100-ое простое число: {result}")
